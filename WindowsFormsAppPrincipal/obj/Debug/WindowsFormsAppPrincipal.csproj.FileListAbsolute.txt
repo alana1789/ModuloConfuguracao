@@ -1,0 +1,11 @@
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\bin\Debug\WindowsFormsAppPrincipal.exe.config
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\bin\Debug\WindowsFormsAppPrincipal.exe
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\bin\Debug\WindowsFormsAppPrincipal.pdb
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.csproj.AssemblyReference.cache
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.csproj.SuggestedBindingRedirects.cache
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormPrincipal.resources
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.Properties.Resources.resources
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.csproj.GenerateResource.cache
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.csproj.CoreCompileInputs.cache
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.exe
+C:\Users\vsistema\source\repos\Configuracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.pdb
