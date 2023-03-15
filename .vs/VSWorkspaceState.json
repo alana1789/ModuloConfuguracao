@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DAL"
   ],
-  "SelectedNode": "\\Configuracao.sln",
+  "SelectedNode": "\\DAL\\PermissaoDAL.cs",
   "PreviewInSolutionExplorer": false
 }
