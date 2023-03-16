@@ -46,19 +46,5 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{d4a4aa03-2469-4d8d-8e50-fe383a3fc1e0}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{ea14a8bc-9096-49e8-a0c2-a2ec951849a3}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WindowsFormsAppPrincipal\WindowsFormsAppPrincipal.csproj">
-      <Project>{8e26e318-f94d-4c77-a6f5-eba27e8a5032}</Project>
-      <Name>WindowsFormsAppPrincipal</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

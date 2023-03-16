@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
@@ -27,7 +28,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu erro ao tentar inserir um usuário no banco de dados.",ex);
+                throw new Exception("Ocorreu erro ao tentar inserir um usuário no banco de dados.", ex);
             }
             finally
             {
@@ -57,7 +58,7 @@ namespace DAL
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
                         usuario.CPF = rd["CPF"].ToString();
-                        usuario.Ativo = rd["Ativo"].ToString();
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuario.Senha = rd["Senha"].ToString();
                         usuarios.Add(usuario);
                     }
@@ -83,7 +84,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email, CPF, Ativo, Senha FROM Usuario where NomeUsuario = @NomeUsuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email, CPF, Ativo, Senha FROM Usuario WHERE NomeUsuario = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@NomeUsuario", _nomeUsuario);
                 cn.Open();
@@ -114,7 +115,7 @@ namespace DAL
         }
         public Usuario BuscarPorNome(string _nome)
         {
-            List<Usuario> usuarioList = new List<Usuario>();    
+            List<Usuario> usuarioList = new List<Usuario>();
             Usuario usuario = new Usuario();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -171,7 +172,7 @@ namespace DAL
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
                         usuario.CPF = rd["CPF"].ToString();
-                        usuario.Ativo = rd["Ativo"].ToString();
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuario.Senha = rd["Senha"].ToString();
                     }
                 }
@@ -187,7 +188,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario BuscarPorCPF(int _cpf)
+        public Usuario BuscarPorCPF(string _cpf)
         {
             Usuario usuario = new Usuario();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -224,14 +225,15 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void Alterar (Usuario _usuario)
+        public void Alterar(Usuario _usuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Usuario SET Nome = @Nome, Id = @Id, NomeUsuario = @NomeUsuario, Email = @Email, CPF = @CPF, Ativo = @Ativo, Senha = @Senha";
-                //cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "UPDATE Usuario SET Nome = @Nome, NomeUsuario = @NomeUsuario, Email = @Email, CPF = @CPF, Ativo = @Ativo, Senha = @Senha WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
                 cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
                 cmd.Parameters.AddWithValue("@Email", _usuario.Email);

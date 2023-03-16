@@ -42,19 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="GrupoUsuario.cs" />
     <Compile Include="GrupoUsuarioDAL.cs" />
-    <Compile Include="NotImplementedExcption.cs" />
-    <Compile Include="Permissao.cs" />
     <Compile Include="PermissaoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{d4a4aa03-2469-4d8d-8e50-fe383a3fc1e0}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{7f92660e-ccba-4b37-9625-562c8569a66e}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

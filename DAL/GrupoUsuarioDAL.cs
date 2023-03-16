@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace DAL
 {
@@ -8,65 +10,65 @@ namespace DAL
     {
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
-                SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-                try
-                {
-                    SqlCommand cmd = cn.CreateCommand();
-                    cmd.CommandText = "INSERT INTO GrupoUsuario(NomeGrupo) Values (@NomeGrupo)";
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.Parameters.AddWithValue("@NomeGrupo", _grupoUsuario.NomeGrupo);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "INSERT INTO GrupoUsuario(NomeGrupo) Values (@NomeGrupo)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@NomeGrupo", _grupoUsuario.NomeGrupo);
 
-                    cmd.Connection = cn;
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu erro ao tentar inserir um grupo no banco de dados.", ex);
-                }
-                finally
-                {
-                    cn.Close();
-                }
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
             }
-        public List<Usuario> BuscarTodos()
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu erro ao tentar inserir um grupo no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<GrupoUsuario> BuscarTodos()
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            List<Usuario> usuarios = new List<Usuario>();
-            Usuario usuario;
+            List<GrupoUsuario> grupoUsuarios = new List<GrupoUsuario>();
+            GrupoUsuario grupoUsuario;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection=cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeGrupo";
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
-                using(SqlDataReader rd = cmd.ExecuteReader())
+                using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
-                        usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32 (rd["Id"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.CPF = rd["CPF"].ToString();
-                        usuario.Ativo = rd["Ativo"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                        usuarios.Add(usuario);
+                        grupoUsuario = new GrupoUsuario();
+                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        grupoUsuarios.Add(grupoUsuario);
                     }
                 }
-                return usuarios;
+                return grupoUsuarios;
             }
             catch (Exception ex)
             {
 
-                throw new Exception("ocorreu um erro ao tentar buscar todos os grupos do banco de dados",ex);
+                throw new Exception("ocorreu um erro ao tentar buscar todos os usuários do banco de dados", ex);
             }
+            finally
+            {
+                cn.Close();
+            }
+
         }
         public GrupoUsuario BuscarPorNomeGrupo(string _nomeGrupo)
         {
-            GrupoUsuario _grupoUsuario = new GrupoUsuario();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -80,11 +82,11 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        _grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
-                        _grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
                     }
                 }
-                return _grupoUsuario;
+                return grupoUsuario;
             }
             catch (Exception ex)
             {
@@ -104,7 +106,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, NomeGrupo FROM grupoUsuario where Id = @Id";
+                cmd.CommandText = "SELECT Id, NomeGrupo FROM grupoUsuario WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
@@ -134,11 +136,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE GrupoUsuario SET NomeGrupo = @NomeGrupo, Id = @Id";
-                //cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "UPDATE GrupoUsuario SET NomeGrupo = @NomeGrupo, WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@NomeGrupo", _grupoUsuario.NomeGrupo);
                 cmd.Parameters.AddWithValue("@Id", _grupoUsuario.Id);
-    
+
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();

@@ -5,6 +5,11 @@
       "taskLabel": "task-DAL",
       "appliesTo": "DAL/",
       "type": "launch"
+    },
+    {
+      "taskLabel": "task-BLL",
+      "appliesTo": "BLL/",
+      "type": "launch"
     }
   ]
 }

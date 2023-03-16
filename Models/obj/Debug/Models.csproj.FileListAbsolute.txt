@@ -14,15 +14,7 @@ C:\Users\vsistema\source\repos\Configuracao\Models\obj\Debug\Models.dll
 C:\Users\vsistema\source\repos\Configuracao\Models\obj\Debug\Models.pdb
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\Models.dll
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\Models.pdb
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\BLL.dll
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\DAL.dll
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\WindowsFormsAppPrincipal.exe
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\BLL.pdb
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\DAL.pdb
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\WindowsFormsAppPrincipal.pdb
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\bin\Debug\WindowsFormsAppPrincipal.exe.config
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\obj\Debug\Models.csproj.AssemblyReference.cache
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\obj\Debug\Models.csproj.CopyComplete
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\obj\Debug\Models.dll
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\Models\obj\Debug\Models.pdb

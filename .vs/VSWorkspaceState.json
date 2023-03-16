@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DAL"
+    "\\BLL"
   ],
-  "SelectedNode": "\\DAL\\PermissaoDAL.cs",
+  "SelectedNode": "\\BLL\\UsuarioBLL.cs",
   "PreviewInSolutionExplorer": false
 }
