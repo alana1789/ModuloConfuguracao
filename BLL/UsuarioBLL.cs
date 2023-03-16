@@ -14,38 +14,38 @@ namespace BLL
                 throw new Exception("A senha deve ter mais de 3 caracteres");
 
 
-            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            GrupoUsuariosDAL usuarioDAL = new GrupoUsuariosDAL();
             usuarioDAL.Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario)
         {
             ValidarDados(_usuario);
-            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            GrupoUsuariosDAL usuarioDAL = new GrupoUsuariosDAL();
             usuarioDAL.Alterar(_usuario);
         }
         public void Excluir(int _id)
         {
-            new UsuarioDAL().Excluir(_id);
+            new GrupoUsuariosDAL().Excluir(_id);
         }
         public List<Usuario> BuscarTodos()
         {
-            return new UsuarioDAL().BuscarTodos();
+            return new GrupoUsuariosDAL().BuscarTodos();
         }
         public Usuario BuscarPorId(int _id)
         {
-            return new UsuarioDAL().BuscarPorId(_id);
+            return new GrupoUsuariosDAL().BuscarPorId(_id);
         }
         public Usuario BuscarPorCPF(string _cpf)
         {
-            return new UsuarioDAL().BuscarPorCPF(_cpf);
+            return new GrupoUsuariosDAL().BuscarPorCPF(_cpf);
         }
         public Usuario BuscarPorNome(string _nome)
         {
-            return new UsuarioDAL().BuscarPorNome(_nome);
+            return new GrupoUsuariosDAL().BuscarPorDescrissao(_nome);
         }
         public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
-            return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
+            return new GrupoUsuariosDAL().BuscarPorNomeUsuario(_nomeUsuario);
         }
         private void ValidarDados(Usuario _usuario)
         {

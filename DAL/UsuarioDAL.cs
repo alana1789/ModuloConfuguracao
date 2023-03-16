@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace DAL
 {
-    public class UsuarioDAL
+    public class GrupoUsuariosDAL
     {
         public void Inserir(Usuario _usuario)
         {
@@ -113,7 +113,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario BuscarPorNome(string _nome)
+        public Usuario BuscarPorDescrissao(string _nome)
         {
             List<Usuario> usuarioList = new List<Usuario>();
             Usuario usuario = new Usuario();

@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace DAL
 {
-    public class GrupoUsuarioDAL
+    public class GrupoUsuariosDAL
     {
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
@@ -175,6 +175,11 @@ namespace DAL
             {
                 cn.Close();
             }
+        }
+
+        public void Inserir(Permissao permissao)
+        {
+            throw new NotImplementedException();
         }
     }
 }
