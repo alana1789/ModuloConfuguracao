@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BLL",
     "\\DAL"
   ],
-  "SelectedNode": "\\BLL\\GrupoUsuarioBLL.cs",
+  "SelectedNode": "\\DAL\\GrupoUsuarioDAL.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace DAL
 {
-    public class GrupoUsuariosDAL
+    public class PermissaoDAL
     {
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
@@ -177,7 +177,32 @@ namespace DAL
             }
         }
 
-        public void Inserir(Permissao permissao)
+        public void Inserir(Models.Permissao permissao)
+        {
+            throw new NotImplementedException();
+        }
+
+        public GrupoUsuario BuscarPorDescrissao(string nome)
+        {
+            throw new NotImplementedException();
+        }
+
+        public GrupoUsuario BuscarPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Inserir(Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Alterar(Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Usuario BuscarPorCPF(string cpf)
         {
             throw new NotImplementedException();
         }

@@ -5,9 +5,12 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class PermissaoDAL
+    public class Permissao
     {
-        public void Inserir(Permissao _permissao)
+        public string Senha { get; set; }
+        public string Nome { get; set; }
+
+        public void Inserir(Models.Permissao _permissao)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -30,12 +33,12 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Permissao> BuscarTodos()
+        public List<Models.Permissao> BuscarTodos()
         {
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            List<Permissao> permissoes = new List<Permissao>();
-            Permissao permissao;
+            List<Models.Permissao> permissoes = new List<Models.Permissao>();
+            Models.Permissao permissao;
             try
             {
                 SqlCommand cmd = new SqlCommand();
@@ -47,7 +50,7 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        permissao = new Permissao();
+                        permissao = new Models.Permissao();
                         permissao.Id = Convert.ToInt32(rd["Id"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         permissoes.Add(permissao);
@@ -65,10 +68,10 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Permissao BuscarPorDescricao(string _descricao)
+        public Models.Permissao BuscarPorDescricao(string _descricao)
         {
-            List<Permissao> permissaoList = new List<Permissao>();
-            Permissao permissao = new Permissao();
+            List<Models.Permissao> permissaoList = new List<Models.Permissao>();
+            Models.Permissao permissao = new Models.Permissao();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -98,9 +101,9 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Permissao BuscaPorId(int _id)
+        public Models.Permissao BuscaPorId(int _id)
         {
-            Permissao permissao = new Permissao();
+            Models.Permissao permissao = new Models.Permissao();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -130,7 +133,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void Alterar(Permissao _permissao)
+        public void Alterar(Models.Permissao _permissao)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -175,6 +178,11 @@ namespace DAL
             {
                 cn.Close();
             }
+        }
+
+        public Usuario BuscarPorDescrissao(string descrissao)
+        {
+            throw new NotImplementedException();
         }
     }
 }
