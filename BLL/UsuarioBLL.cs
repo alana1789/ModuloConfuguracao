@@ -14,13 +14,13 @@ namespace BLL
                 throw new Exception("A senha deve ter mais de 3 caracteres");
 
 
-            PermissaoDAL usuarioDAL = new PermissaoDAL();
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario)
         {
             ValidarDados(_usuario);
-            UsuariosDAL usuarioDAL = new UsuariosDAL();
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Alterar(_usuario);
         }
         public void Excluir(int _id)
@@ -33,11 +33,11 @@ namespace BLL
         }
         public Usuario BuscarPorId(int _id)
         {
-            return new UsuariosDAL().BuscarPorId(_id);
+            return new UsuarioDAL().BuscarPorId(_id);
         }
         public Usuario BuscarPorCPF(string _cpf)
         {
-            return new PermissaoDAL().BuscarPorCPF(_cpf);
+            return new UsuarioDAL().BuscarPorCPF(_cpf);
         }
         public Usuario BuscarPorNome(string _nome)
         {
@@ -45,7 +45,7 @@ namespace BLL
         }
         public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
-            return new UsuariosDAL().BuscarPorNomeUsuario(_nomeUsuario);
+            return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
         }
         private void ValidarDados(Usuario _usuario)
         {
@@ -55,29 +55,8 @@ namespace BLL
                 throw new Exception("o nome deve ter mais de 2 caracteres");
 
         }
-
-        private class UsuarioDAL
-        {
-            public UsuarioDAL()
-            {
-            }
-
-            internal Usuario BuscarPorNome(string nome)
-            {
-                throw new NotImplementedException();
-            }
-
-            internal List<Usuario> BuscarTodos()
-            {
-                throw new NotImplementedException();
-            }
-
-            internal void Excluir(int id)
-            {
-                throw new NotImplementedException();
-            }
         }
     }
-}
+
 
 

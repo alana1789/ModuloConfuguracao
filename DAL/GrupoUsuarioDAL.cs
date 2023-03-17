@@ -192,15 +192,7 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public void Inserir(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Alterar(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
 
         public Usuario BuscarPorCPF(string cpf)
         {
