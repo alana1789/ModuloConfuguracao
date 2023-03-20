@@ -19,16 +19,6 @@ namespace WindowsFormsAppPrincipal
             InitializeComponent();
         }
 
-        private void FormBuscarUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usuarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
@@ -54,7 +44,6 @@ namespace WindowsFormsAppPrincipal
         {
             using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
-
                 frm.ShowDialog();
             }
             buttonBuscar_Click(null, null);
@@ -69,5 +58,23 @@ namespace WindowsFormsAppPrincipal
             }
             buttonBuscar_Click(null, null);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAdicionarGrupoUsuario_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroGupoUsuario frm = new FormCadastroGupoUsuario())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonExcluirGrupoUsuario_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
- } 
+}
