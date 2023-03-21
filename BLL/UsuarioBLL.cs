@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using DAL;
 using Models;
 
@@ -9,6 +10,9 @@ namespace BLL
     {
         public void Inserir(Usuario _usuario)
         {
+            ValidarPermissao(2);
+            ValidarDados(_usuario);
+
             if (_usuario.Senha.Length <= 3)
 
                 throw new Exception("A senha deve ter mais de 3 caracteres");
@@ -19,17 +23,20 @@ namespace BLL
         }
         public void Alterar(Usuario _usuario)
         {
+            ValidarPermissao(3);
             ValidarDados(_usuario);
+
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Alterar(_usuario);
         }
         public void Excluir(int _id)
         {
-            new UsuarioDAL ().Excluir(_id);
+            ValidarPermissao(4);
+            new UsuarioDAL().Excluir(_id);
         }
         public List<Usuario> BuscarTodos()
         {
-            return new UsuarioDAL ().BuscarTodos();
+            return new UsuarioDAL().BuscarTodos();
         }
         public Usuario BuscarPorId(int _id)
         {
@@ -55,8 +62,13 @@ namespace BLL
                 throw new Exception("o nome deve ter mais de 2 caracteres");
 
         }
+        public void ValidarPermissao(int _idPermissao)
+        {
+             if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissao))
+                throw new Exception("Você não tem permissão para realizar essa operação. Procure o adiministrador do sistema");
         }
     }
+}
 
 
 

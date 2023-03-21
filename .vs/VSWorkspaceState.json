@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\BLL",
-    "\\DAL"
+    "\\DAL",
+    "\\WindowsFormsAppPrincipal"
   ],
-  "SelectedNode": "\\BLL\\UsuarioBLL.cs",
+  "SelectedNode": "\\WindowsFormsAppPrincipal\\FormBuscarUsuario.cs",
   "PreviewInSolutionExplorer": false
 }

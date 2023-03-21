@@ -46,6 +46,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(855, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -60,20 +61,20 @@
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // grupoDeUsuáriosToolStripMenuItem
             // 
             this.grupoDeUsuáriosToolStripMenuItem.Name = "grupoDeUsuáriosToolStripMenuItem";
-            this.grupoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.grupoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.grupoDeUsuáriosToolStripMenuItem.Text = "Grupo de usuários";
             // 
             // permissõesToolStripMenuItem
             // 
             this.permissõesToolStripMenuItem.Name = "permissõesToolStripMenuItem";
-            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.permissõesToolStripMenuItem.Text = "Permissões";
             // 
             // FormPrincipal

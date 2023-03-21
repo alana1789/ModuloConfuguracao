@@ -12,9 +12,9 @@ namespace BLL
     {
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
-            if (_grupoUsuario.Senha.Length <= 3)
+            //if (_grupoUsuario.Senha.Length <= 3)
 
-                throw new Exception("A senha deve ter mais de 3 caracteres");
+               // throw new Exception("A senha deve ter mais de 3 caracteres");
 
 
             PermissaoDAL grupoUsuarioDAL = new PermissaoDAL();

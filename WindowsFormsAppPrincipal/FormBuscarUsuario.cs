@@ -21,7 +21,14 @@ namespace WindowsFormsAppPrincipal
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+            try
+            {
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcuirUsuario_Click(object sender, EventArgs e)
@@ -51,6 +58,12 @@ namespace WindowsFormsAppPrincipal
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
+            if (usuarioBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Nenhum usuário selecionado.");
+                return;
+            }
+
             int id = ((Usuario)usuarioBindingSource.Current).Id;
             using (FormCadastroUsuario frm = new FormCadastroUsuario(id))
             {
@@ -66,15 +79,27 @@ namespace WindowsFormsAppPrincipal
 
         private void buttonAdicionarGrupoUsuario_Click(object sender, EventArgs e)
         {
-            using (FormCadastroGupoUsuario frm = new FormCadastroGupoUsuario())
+            using (FormCadastrarGrupoUsuario frm = new FormCadastrarGrupoUsuario())
             {
                 frm.ShowDialog();
             }
+            buttonBuscar_Click(null, null);
         }
 
         private void buttonExcluirGrupoUsuario_Click(object sender, EventArgs e)
         {
-           
+            if (grupoUsuariosBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído.");
+                return;
+            }
+            if (MessageBox.Show("deseja realmente excluir?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int idGrupo = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
+            new GrupoUsuarioBLL().Excluir(idGrupo);
+            grupoUsuariosBindingSource.RemoveCurrent();
+            MessageBox.Show("Registro excluído com sucesso!");
         }
     }
 }
