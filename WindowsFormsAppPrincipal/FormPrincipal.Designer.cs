@@ -70,6 +70,7 @@
             this.grupoDeUsuáriosToolStripMenuItem.Name = "grupoDeUsuáriosToolStripMenuItem";
             this.grupoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.grupoDeUsuáriosToolStripMenuItem.Text = "Grupo de usuários";
+            this.grupoDeUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.grupoDeUsuáriosToolStripMenuItem_Click);
             // 
             // permissõesToolStripMenuItem
             // 
@@ -84,10 +85,11 @@
             this.ClientSize = new System.Drawing.Size(855, 480);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormPrincipal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulo Configuração";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

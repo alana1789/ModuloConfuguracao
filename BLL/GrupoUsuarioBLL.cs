@@ -12,18 +12,18 @@ namespace BLL
     {
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
-            //if (_grupoUsuario.Senha.Length <= 3)
+            if (_grupoUsuario.Senha.Length <= 3)
 
-               // throw new Exception("A senha deve ter mais de 3 caracteres");
+             throw new Exception("A senha deve ter mais de 3 caracteres");
 
 
-            PermissaoDAL grupoUsuarioDAL = new PermissaoDAL();
+            GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
             grupoUsuarioDAL.Inserir(_grupoUsuario);
         }
         public void Alterar(GrupoUsuario _grupoUsuario)
         {
             ValidarDados(_grupoUsuario);
-            PermissaoDAL GrupoUsuarioDAL = new PermissaoDAL();
+            GrupoUsuarioDAL GrupoUsuarioDAL = new GrupoUsuarioDAL();
             GrupoUsuarioDAL.Alterar(_grupoUsuario);
         }
         public void Excluir(int _id)
@@ -32,15 +32,15 @@ namespace BLL
         }
         public List<GrupoUsuario> BuscarTodos()
         {
-            return new PermissaoDAL().BuscarTodos();
+            return new GrupoUsuarioDAL().BuscarTodos();
         }
         public GrupoUsuario BuscarPorId(int _id)
         {
-            return new PermissaoDAL().BuscarPorId(_id);
+            return new GrupoUsuarioDAL().BuscarPorId(_id);
         }
         public GrupoUsuario BuscarPorGrupo(string _nome)
         {
-            return new PermissaoDAL().BuscarPorDescrissao(_nome);
+            return new GrupoUsuarioDAL().BuscarPorDescrissao(_nome);
         }
         private void ValidarDados(GrupoUsuario _grupoUsuario)
         {
@@ -49,6 +49,11 @@ namespace BLL
             if (_grupoUsuario.Nome.Length <= 2)
                 throw new Exception("o nome deve ter mais de 2 caracteres");
 
+        }
+
+        public object BuscarPorNomeGrupo(string text)
+        {
+            throw new NotImplementedException();
         }
     }
 }

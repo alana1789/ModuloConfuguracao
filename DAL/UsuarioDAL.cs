@@ -1,5 +1,6 @@
 ﻿using Models;
 using System;
+using DAL;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
@@ -60,6 +61,7 @@ namespace DAL
                         usuario.CPF = rd["CPF"].ToString();
                         usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuario.Senha = rd["Senha"].ToString();
+                        usuario.GrupoUsuarios = new GrupoUsuarioDAL().BuscarPorIdUsuario(usuario.Id);
                         usuarios.Add(usuario);
                     }
                 }
@@ -211,6 +213,7 @@ namespace DAL
                         usuario.CPF = rd["CPF"].ToString();
                         usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuario.Senha = rd["Senha"].ToString();
+                        usuario.GrupoUsuarios = new GrupoUsuarioDAL().BuscarPorIdUsuario(usuario.Id);
                     }
                 }
                 return usuario;
@@ -341,6 +344,64 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("ocorreu um erro ao tentar validar usuário no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public void AdcionarGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"INSERT INTO UsuarioGrupoUsuario (IdUsuario, IdGrupoUsuario)Values(@IdUsuario, @IdGrupoUsuario)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdGrupoUsuario", _idGrupoUsuario);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu erro ao tentar vincular um grupo a um usuário no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public bool UsuarioPertenceAoGrupo(int _idUsuario, int _idGrupoUsuario)
+        {
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT 1 FROM UsuarioGrupoUsuario 
+                                    WHERE IdUsuario = @IdUsuario AND IdGrupoUsuario = @IdGrupoUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdGrupoUsuario", _idGrupoUsuario);
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+
+                        return true;
+
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("o usuário já pertence ao grupo", ex);
             }
             finally
             {

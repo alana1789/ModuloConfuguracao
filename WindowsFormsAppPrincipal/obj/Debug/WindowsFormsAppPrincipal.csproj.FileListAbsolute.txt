@@ -29,4 +29,4 @@ C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\b
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\bin\Debug\DAL.pdb
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormBuscarUsuario.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastroUsuario.resources
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastrarGrupoUsuario.resources
+C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormConsultaGrupoUsuario.resources

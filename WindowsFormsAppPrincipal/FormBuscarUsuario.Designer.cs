@@ -249,11 +249,13 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.usuarioDataGridView);
             this.Controls.Add(this.grupoUsuariosDataGridView);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormBuscarUsuario";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormBuscarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();

@@ -64,8 +64,23 @@ namespace BLL
         }
         public void ValidarPermissao(int _idPermissao)
         {
-             if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissao))
-                throw new Exception("Você não tem permissão para realizar essa operação. Procure o adiministrador do sistema");
+            //if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissao))
+            //{
+              //  throw new Exception("Você não tem permissão para realizar essa operação. Procure o adiministrador do sistema");
+
+            //}
+        }
+        public void ValidarPermissaoUsuarioLogado(int _idPermissaoUsuarioLogdo)
+        {
+            //if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissaoUsuarioLogdo))
+            //    throw new Exception("Você não tem permissão para realizar essa operação. Procure o adiministrador do sistema");
+
+            //  }
+        }
+        public void AdicionarGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
+        {
+            if (!new UsuarioDAL().UsuarioPertenceAoGrupo(_idUsuario, _idUsuario))
+                new UsuarioDAL().AdcionarGrupoUsuario(_idUsuario, _idGrupoUsuario);
         }
     }
 }
