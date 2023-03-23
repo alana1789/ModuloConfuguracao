@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 521);
+            this.ClientSize = new System.Drawing.Size(1199, 525);
             this.Controls.Add(this.buttonExcluirGrupoUsuario);
             this.Controls.Add(this.buttonAdicionarGrupoUsuario);
             this.Controls.Add(this.buttonExcuirUsuario);

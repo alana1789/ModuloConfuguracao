@@ -50,10 +50,9 @@ namespace BLL
                 throw new Exception("o nome deve ter mais de 2 caracteres");
 
         }
-
         public object BuscarPorNomeGrupo(string text)
         {
-            throw new NotImplementedException();
+            return new GrupoUsuarioDAL().BuscarTodos();
         }
     }
 }

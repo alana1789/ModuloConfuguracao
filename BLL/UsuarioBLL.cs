@@ -8,10 +8,10 @@ namespace BLL
 {
     public class UsuarioBLL
     {
-        public void Inserir(Usuario _usuario)
+        public void Inserir(Usuario _usuario, string _confirmarSenha)
         {
             ValidarPermissao(2);
-            ValidarDados(_usuario);
+            ValidarDados(_usuario, _confirmarSenha);
 
             if (_usuario.Senha.Length <= 3)
 
@@ -21,10 +21,10 @@ namespace BLL
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Inserir(_usuario);
         }
-        public void Alterar(Usuario _usuario)
+        public void Alterar(Usuario _usuario, string _confirmarSenha)
         {
             ValidarPermissao(3);
-            ValidarDados(_usuario);
+            ValidarDados(_usuario, _confirmarSenha);
 
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Alterar(_usuario);
@@ -54,8 +54,13 @@ namespace BLL
         {
             return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
         }
-        private void ValidarDados(Usuario _usuario)
-        {
+        private void ValidarDados(Usuario _usuario, string _confirmarSenha)
+        {    
+
+            if (_usuario.Senha != _confirmarSenha)
+                throw new Exception("A senha e a confirmação de senha devem ser iguais");
+
+
             if (_usuario.Senha.Length <= 3)
                 throw new Exception("A senha deve ter mais de 3 caracteres");
             if (_usuario.Nome.Length <= 2)
@@ -81,6 +86,11 @@ namespace BLL
         {
             if (!new UsuarioDAL().UsuarioPertenceAoGrupo(_idUsuario, _idUsuario))
                 new UsuarioDAL().AdcionarGrupoUsuario(_idUsuario, _idGrupoUsuario);
+        }
+
+        public void RemoverGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
+        {
+            new UsuarioDAL().RemoverGrupoUsuario(_idUsuario, _idGrupoUsuario);
         }
     }
 }

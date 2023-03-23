@@ -21,7 +21,7 @@ namespace WindowsFormsAppPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            Constantes.IdUsuarioLogado = 28;
+            Constantes.IdUsuarioLogado = 29;
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,13 +31,14 @@ namespace WindowsFormsAppPrincipal
                 frm.ShowDialog();
             }
         }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+        }
+        private void grupoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
 
-        private void grupoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

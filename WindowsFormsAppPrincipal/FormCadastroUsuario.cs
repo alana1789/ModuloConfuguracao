@@ -29,16 +29,23 @@ namespace WindowsFormsAppPrincipal
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            usuarioBindingSource.EndEdit();
+            try
+            {
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+                usuarioBindingSource.EndEdit();
 
-            if(Id == 0)
-                usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
-            else
-                usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current);
+                if (Id == 0)
+                    usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current, textBoxConfirmar.Text);
+                else
+                    usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current, textBoxConfirmar.Text);
 
-            MessageBox.Show("Registro salvo com sucesso!");
-            Close();
+                MessageBox.Show("Registro salvo com sucesso!");
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
@@ -52,6 +59,11 @@ namespace WindowsFormsAppPrincipal
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBoxConfirmar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,7 +42,7 @@
             this.nomeUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.senhaTextBox = new System.Windows.Forms.TextBox();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxConfirmar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
@@ -164,12 +164,13 @@
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxConfirmar
             // 
-            this.textBox1.Location = new System.Drawing.Point(462, 254);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 22);
-            this.textBox1.TabIndex = 12;
+            this.textBoxConfirmar.Location = new System.Drawing.Point(462, 254);
+            this.textBoxConfirmar.Name = "textBoxConfirmar";
+            this.textBoxConfirmar.Size = new System.Drawing.Size(114, 22);
+            this.textBoxConfirmar.TabIndex = 12;
+            this.textBoxConfirmar.TextChanged += new System.EventHandler(this.textBoxConfirmar_TextChanged);
             // 
             // label1
             // 
@@ -210,7 +211,7 @@
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxConfirmar);
             this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(TextBoxConfirmarSenha);
             this.Controls.Add(senhaLabel);
@@ -246,7 +247,7 @@
         private System.Windows.Forms.TextBox nomeUsuarioTextBox;
         private System.Windows.Forms.TextBox senhaTextBox;
         private System.Windows.Forms.CheckBox ativoCheckBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxConfirmar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;

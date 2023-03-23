@@ -74,25 +74,36 @@ namespace WindowsFormsAppPrincipal
         private void buttonAdicionarGrupoUsuario_Click(object sender, EventArgs e)
         {
             try
-            {using(FormConsultaGrupoUsuario frm = new FormConsultaGrupoUsuario())
+            {
+                using (FormConsultaGrupoUsuario frm = new FormConsultaGrupoUsuario())
                 {
                     frm.ShowDialog();
 
-                    if(frm.Id != 0)
+                    if (frm.Id != 0)
                     {
                         int idUsuario = ((Usuario)usuarioBindingSource.Current).Id;
-                        new UsuarioBLL().AdicionarGrupoUsuario(idUsuario,frm.Id);
-                    }
+                        new UsuarioBLL().AdicionarGrupoUsuario(idUsuario, frm.Id);
+                    }                                                                    
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex)       
             {
                 MessageBox.Show(ex.Message);
             }
         }
         private void buttonExcluirGrupoUsuario_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int idGrupoUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+                int idUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+                new UsuarioBLL().RemoverGrupoUsuario(idUsuario, idGrupoUsuario);
+                grupoUsuariosBindingSource.RemoveCurrent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void FormBuscarUsuario_Load(object sender, EventArgs e)
         {

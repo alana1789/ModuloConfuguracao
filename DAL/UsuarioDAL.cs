@@ -4,7 +4,6 @@ using DAL;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
-
 namespace DAL
 {
     public class UsuarioDAL
@@ -35,7 +34,6 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
         public List<Usuario> BuscarTodos()
         {
@@ -107,7 +105,6 @@ namespace DAL
             }
             catch (Exception ex)
             {
-
                 throw new Exception("ocorreu um erro ao tentar buscar nome do usuário do banco de dados", ex);
             }
             finally
@@ -144,7 +141,6 @@ namespace DAL
             }
             catch (Exception ex)
             {
-
                 throw new Exception("ocorreu um erro ao tentar buscar nome de usuário do banco de dados", ex);
             }
             finally
@@ -257,7 +253,6 @@ namespace DAL
             }
             catch (Exception ex)
             {
-
                 throw new Exception("ocorreu um erro ao tentar buscar cpf do usuário do banco de dados", ex);
             }
             finally
@@ -319,7 +314,6 @@ namespace DAL
         public bool ValidarPermissao(int _idUsuario, int _idPermissao)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-
             try
             {
                 SqlCommand cmd = new SqlCommand();
@@ -327,18 +321,15 @@ namespace DAL
                 cmd.CommandText = @"SELECT 1 FROM PermissaoGrupoUsuario
                 inner join UsuarioGrupoUsuario ON PermissaoGrupoUsuario.IdGrupoUsuario = UsuarioGrupoUsuario.IdGrupoUsuario
                 WHERE UsuarioGrupoUsuario.IdUsuario = @IdUsuario AND PermissaoGrupoUsuario.IdPermissao = @IdPermissao";
-
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
                 cmd.Parameters.AddWithValue("@IdPermissao", _idPermissao);
-
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     if (rd.Read())
                         return true;
                 }
-
                 return false;
             }
             catch (Exception ex)
@@ -375,7 +366,6 @@ namespace DAL
         }
         public bool UsuarioPertenceAoGrupo(int _idUsuario, int _idGrupoUsuario)
         {
-
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -384,24 +374,46 @@ namespace DAL
                 cmd.CommandText = @"SELECT 1 FROM UsuarioGrupoUsuario 
                                     WHERE IdUsuario = @IdUsuario AND IdGrupoUsuario = @IdGrupoUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
-
                 cmd.Parameters.AddWithValue("@IdGrupoUsuario", _idGrupoUsuario);
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
-
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     if (rd.Read())
 
                         return true;
-
                 }
                 return false;
             }
             catch (Exception ex)
             {
-
                 throw new Exception("o usuário já pertence ao grupo", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public void RemoverGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"DELETE FROM UsuarioGrupoUsuario WHERE IdUsuario = @IdUsuario AND IdGrupoUsuario = @IdGrupoUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdGrupoUsuario", _idGrupoUsuario);
+
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu erro ao tentar remover um grupo do usuário no banco de dados.", ex);
             }
             finally
             {
