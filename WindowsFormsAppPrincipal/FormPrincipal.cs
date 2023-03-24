@@ -18,12 +18,10 @@ namespace WindowsFormsAppPrincipal
         {
             InitializeComponent();
         }
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             Constantes.IdUsuarioLogado = 29;
         }
-
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormBuscarUsuario frm = new FormBuscarUsuario())
@@ -36,11 +34,11 @@ namespace WindowsFormsAppPrincipal
         }
         private void grupoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        }
-
-        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            using (FormBuscarGrupoUsuario frm = new FormBuscarGrupoUsuario())
+            {
+                frm.ShowDialog();
+            }
         }
     }
-}
+    }
+

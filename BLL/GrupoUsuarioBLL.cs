@@ -10,6 +10,8 @@ namespace BLL
 {
     public class GrupoUsuarioBLL
     {
+        public int Id { get; set; }
+
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
             if (_grupoUsuario.Senha.Length <= 3)

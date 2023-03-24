@@ -30,3 +30,5 @@ C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\b
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormBuscarUsuario.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastroUsuario.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormConsultaGrupoUsuario.resources
+C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormBuscarGrupoUsuario.resources
+C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastroGrupoUsuario.resources
