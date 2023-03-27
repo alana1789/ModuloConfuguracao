@@ -150,9 +150,9 @@
             // 
             // buttonAdicionarGrupoUsuario
             // 
-            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(1029, 51);
+            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(1024, 51);
             this.buttonAdicionarGrupoUsuario.Name = "buttonAdicionarGrupoUsuario";
-            this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(80, 23);
             this.buttonAdicionarGrupoUsuario.TabIndex = 5;
             this.buttonAdicionarGrupoUsuario.Text = "Ad&icionar";
             this.buttonAdicionarGrupoUsuario.UseVisualStyleBackColor = true;

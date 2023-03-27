@@ -102,6 +102,7 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Login";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // FormLogin
             // 
