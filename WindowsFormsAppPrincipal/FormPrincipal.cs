@@ -20,7 +20,19 @@ namespace WindowsFormsAppPrincipal
         }
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            Constantes.IdUsuarioLogado = 29;
+            try
+            {
+                using (FormLogin frm = new FormLogin())
+                {
+                    frm.ShowDialog();
+                    if(!frm.Logou)
+                        Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -35,6 +47,14 @@ namespace WindowsFormsAppPrincipal
         private void grupoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormBuscarGrupoUsuario frm = new FormBuscarGrupoUsuario())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void permissõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPermissao frm = new FormBuscarPermissao())
             {
                 frm.ShowDialog();
             }

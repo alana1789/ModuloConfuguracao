@@ -31,6 +31,7 @@ namespace DAL
                 cn.Close();
             }
         }
+
         public List<GrupoUsuario> BuscarTodos()
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -176,27 +177,52 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Inserir(Models.Permissao permissao)
         {
             throw new NotImplementedException();
         }
-
-        public GrupoUsuario BuscarPorDescrissao(string nome)
+        public GrupoUsuario BuscarPorDescrissao(string _nomeGrupo)
         {
-            throw new NotImplementedException();
-        }
+            List<GrupoUsuario> grupoUsuarioList = new List<GrupoUsuario>();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, NomeGrupo where NomeGrupo like @NomeGrupo";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@NomeGrupo", "%" + _nomeGrupo + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.Nome = rd["NomeGrupo"].ToString();
 
+                    }
+                    return grupoUsuario;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("ocorreu um erro ao tentar buscar nome do usuário do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public GrupoUsuario BuscarPorId(int id)
         {
             throw new NotImplementedException();
         }
-
         public Usuario BuscarPorCPF(string cpf)
         {
             throw new NotImplementedException();
         }
-
         public List<GrupoUsuario> BuscarPorIdUsuario(int _idUsuario)
         {
             {
@@ -236,6 +262,10 @@ namespace DAL
                     cn.Close();
                 }
             }
+
+        }
+        public void AdicionarGrupoUsuarios(int _idGrupoUsuario, int _idPermissao)
+        {
 
         }
     }

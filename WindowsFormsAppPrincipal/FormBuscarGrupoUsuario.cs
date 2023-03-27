@@ -23,17 +23,14 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                grupoUsuariosBindingSource.DataSource = new GrupoUsuarioBLL().BuscarPorNomeGrupo(textBoxBuscarGrupoUsuario.Text);
-
+                grupoUsuariosBindingSource.DataSource = new GrupoUsuarioBLL().BuscarTodos();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void Alterar_Click(object sender, EventArgs e)
+        private void buttonAlterar_Click(object sender, EventArgs e)
         {
             if (grupoUsuariosBindingSource.Count <= 0)
             {
@@ -48,8 +45,7 @@ namespace WindowsFormsAppPrincipal
             }
             buttonBuscar_Click(null, null);
         }
-
-        private void buttonAdicionar_Click(object sender, EventArgs e)
+        private void buttonAdicionarGrupoUsuario_Click_1(object sender, EventArgs e)
         {
             using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario())
             {
@@ -57,21 +53,32 @@ namespace WindowsFormsAppPrincipal
             }
             buttonBuscar_Click(null, null);
         }
-
-        private void buttonExcluir_Click(object sender, EventArgs e)
+        private void buttonExcuirUsuario_Click(object sender, EventArgs e)
         {
-            if (grupoUsuariosBindingSource.Count <= 0)
-            {
-                MessageBox.Show("Não existe registro para ser excluído.");
-                return;
-            }
-            if (MessageBox.Show("deseja realmente excluir?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((GrupoUsuarioBLL)grupoUsuariosBindingSource.Current).Id;
+            int id = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
             new GrupoUsuarioBLL().Excluir(id);
             grupoUsuariosBindingSource.RemoveCurrent();
             MessageBox.Show("Registro excluído com sucesso!");
+        }
+        private void buttonAdicionarPermissao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormConsultaPermissao frm = new FormConsultaPermissao())
+                {
+                    frm.ShowDialog();
+
+                    if (frm.Id != 0)
+                    {
+                        int idUsuario = ((Permissao)permissoesBindingSource.Current).Id;
+                        new PermissaoBLL().AdicionarPermissao(idUsuario, frm.Id);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

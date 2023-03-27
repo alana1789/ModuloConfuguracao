@@ -9,6 +9,7 @@ namespace DAL
     {
         public string Senha { get; set; }
         public string Nome { get; set; }
+        public int Id { get; set; }
 
         public void Inserir(Models.Permissao _permissao)
         {

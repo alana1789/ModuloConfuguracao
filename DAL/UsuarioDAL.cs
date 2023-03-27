@@ -394,7 +394,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void RemoverGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

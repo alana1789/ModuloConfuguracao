@@ -50,7 +50,7 @@
             // 
             // grupoUsuariosBindingSource
             // 
-            this.grupoUsuariosBindingSource.DataSource = typeof(Models.GrupoUsuario);
+            this.grupoUsuariosBindingSource.DataSource = typeof(Models.Permissao);
             // 
             // nomeGrupoTextBox
             // 
@@ -89,6 +89,7 @@
             this.buttonCancelar.TabIndex = 26;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FormCadastroGrupoUsuario
             // 

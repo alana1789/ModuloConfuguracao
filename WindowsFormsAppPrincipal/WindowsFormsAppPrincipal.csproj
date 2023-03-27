@@ -82,6 +82,18 @@
     <Compile Include="FormConsultaGrupoUsuario.Designer.cs">
       <DependentUpon>FormConsultaGrupoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultaPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaPermissao.Designer.cs">
+      <DependentUpon>FormConsultaPermissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBuscarGrupoUsuario.resx">
       <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarPermissao.resx">
+      <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarUsuario.resx">
       <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
@@ -104,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaGrupoUsuario.resx">
       <DependentUpon>FormConsultaGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaPermissao.resx">
+      <DependentUpon>FormConsultaPermissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -137,6 +158,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{d4a4aa03-2469-4d8d-8e50-fe383a3fc1e0}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{EA14A8BC-9096-49E8-A0C2-A2EC951849A3}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{7f92660e-ccba-4b37-9625-562c8569a66e}</Project>

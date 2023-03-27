@@ -63,6 +63,7 @@
             this.grupoUsuarioDataGridView.RowTemplate.Height = 24;
             this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(739, 350);
             this.grupoUsuarioDataGridView.TabIndex = 1;
+            this.grupoUsuarioDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grupoUsuarioDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -99,6 +100,7 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(658, 22);
             this.textBoxBuscar.TabIndex = 3;
+            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // buttonBuscar
             // 

@@ -14,10 +14,7 @@ namespace BLL
 
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
-            if (_grupoUsuario.Senha.Length <= 3)
-
-             throw new Exception("A senha deve ter mais de 3 caracteres");
-
+            throw new Exception("A senha deve ter mais de 3 caracteres");
 
             GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
             grupoUsuarioDAL.Inserir(_grupoUsuario);
@@ -30,8 +27,19 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
-            new GrupoUsuario().Excluir(_id);
+            ValidarPermissao(4);
+            new UsuarioDAL().Excluir(_id);
         }
+
+        private void ValidarPermissao(int _idPermissao)
+        {
+           //if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissao))
+            //{
+              //  throw new Exception("Você não tem permissão para realizar essa operação. Procure o adiministrador do sistema");
+
+            //}
+        }
+
         public List<GrupoUsuario> BuscarTodos()
         {
             return new GrupoUsuarioDAL().BuscarTodos();

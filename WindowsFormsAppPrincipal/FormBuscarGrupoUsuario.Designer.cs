@@ -29,28 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.grupoUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grupoUsuariosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxBuscarGrupoUsuario = new System.Windows.Forms.TextBox();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.Alterar = new System.Windows.Forms.Button();
-            this.buttonAdicionar = new System.Windows.Forms.Button();
-            this.buttonExcluir = new System.Windows.Forms.Button();
+            this.grupoUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permissoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permissoesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonExcuirUsuario = new System.Windows.Forms.Button();
+            this.buttonAdicionarGrupoUsuario = new System.Windows.Forms.Button();
+            this.buttonExcluirGrupoUsuario = new System.Windows.Forms.Button();
             this.buttonAdicionarPermissao = new System.Windows.Forms.Button();
-            this.buttonExcluirPermissao = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grupoUsuariosBindingSource
-            // 
-            this.grupoUsuariosBindingSource.DataSource = typeof(Models.GrupoUsuario);
             // 
             // grupoUsuariosDataGridView
             // 
@@ -62,12 +57,12 @@
             this.grupoUsuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
             this.grupoUsuariosDataGridView.DataSource = this.grupoUsuariosBindingSource;
-            this.grupoUsuariosDataGridView.Location = new System.Drawing.Point(12, 78);
+            this.grupoUsuariosDataGridView.Location = new System.Drawing.Point(9, 83);
             this.grupoUsuariosDataGridView.Name = "grupoUsuariosDataGridView";
             this.grupoUsuariosDataGridView.ReadOnly = true;
             this.grupoUsuariosDataGridView.RowHeadersWidth = 51;
             this.grupoUsuariosDataGridView.RowTemplate.Height = 24;
-            this.grupoUsuariosDataGridView.Size = new System.Drawing.Size(504, 360);
+            this.grupoUsuariosDataGridView.Size = new System.Drawing.Size(555, 297);
             this.grupoUsuariosDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn2
@@ -79,52 +74,9 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 200;
             // 
-            // textBoxBuscarGrupoUsuario
+            // grupoUsuariosBindingSource
             // 
-            this.textBoxBuscarGrupoUsuario.Location = new System.Drawing.Point(12, 49);
-            this.textBoxBuscarGrupoUsuario.Name = "textBoxBuscarGrupoUsuario";
-            this.textBoxBuscarGrupoUsuario.Size = new System.Drawing.Size(180, 22);
-            this.textBoxBuscarGrupoUsuario.TabIndex = 2;
-            // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Location = new System.Drawing.Point(198, 49);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscar.TabIndex = 3;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // Alterar
-            // 
-            this.Alterar.Location = new System.Drawing.Point(279, 49);
-            this.Alterar.Name = "Alterar";
-            this.Alterar.Size = new System.Drawing.Size(75, 23);
-            this.Alterar.TabIndex = 3;
-            this.Alterar.Text = "Alterar";
-            this.Alterar.UseVisualStyleBackColor = true;
-            this.Alterar.Click += new System.EventHandler(this.Alterar_Click);
-            // 
-            // buttonAdicionar
-            // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(360, 49);
-            this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdicionar.TabIndex = 3;
-            this.buttonAdicionar.Text = "Adicionar";
-            this.buttonAdicionar.UseVisualStyleBackColor = true;
-            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
-            // 
-            // buttonExcluir
-            // 
-            this.buttonExcluir.Location = new System.Drawing.Point(441, 49);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluir.TabIndex = 3;
-            this.buttonExcluir.Text = "Excluir";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
+            this.grupoUsuariosBindingSource.DataSource = typeof(Models.GrupoUsuario);
             // 
             // permissoesBindingSource
             // 
@@ -141,13 +93,13 @@
             this.permissoesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3});
             this.permissoesDataGridView.DataSource = this.permissoesBindingSource;
-            this.permissoesDataGridView.Location = new System.Drawing.Point(532, 78);
+            this.permissoesDataGridView.Location = new System.Drawing.Point(570, 83);
             this.permissoesDataGridView.Name = "permissoesDataGridView";
             this.permissoesDataGridView.ReadOnly = true;
             this.permissoesDataGridView.RowHeadersWidth = 51;
             this.permissoesDataGridView.RowTemplate.Height = 24;
-            this.permissoesDataGridView.Size = new System.Drawing.Size(387, 360);
-            this.permissoesDataGridView.TabIndex = 6;
+            this.permissoesDataGridView.Size = new System.Drawing.Size(434, 297);
+            this.permissoesDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -156,47 +108,85 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 200;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(312, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(327, 54);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 6;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // buttonExcuirUsuario
+            // 
+            this.buttonExcuirUsuario.Location = new System.Drawing.Point(489, 55);
+            this.buttonExcuirUsuario.Name = "buttonExcuirUsuario";
+            this.buttonExcuirUsuario.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcuirUsuario.TabIndex = 7;
+            this.buttonExcuirUsuario.Text = "Excuir";
+            this.buttonExcuirUsuario.UseVisualStyleBackColor = true;
+            this.buttonExcuirUsuario.Click += new System.EventHandler(this.buttonExcuirUsuario_Click);
+            // 
+            // buttonAdicionarGrupoUsuario
+            // 
+            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(408, 54);
+            this.buttonAdicionarGrupoUsuario.Name = "buttonAdicionarGrupoUsuario";
+            this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionarGrupoUsuario.TabIndex = 8;
+            this.buttonAdicionarGrupoUsuario.Text = "Adicionar";
+            this.buttonAdicionarGrupoUsuario.UseCompatibleTextRendering = true;
+            this.buttonAdicionarGrupoUsuario.UseVisualStyleBackColor = true;
+            this.buttonAdicionarGrupoUsuario.Click += new System.EventHandler(this.buttonAdicionarGrupoUsuario_Click_1);
+            // 
+            // buttonExcluirGrupoUsuario
+            // 
+            this.buttonExcluirGrupoUsuario.Location = new System.Drawing.Point(929, 55);
+            this.buttonExcluirGrupoUsuario.Name = "buttonExcluirGrupoUsuario";
+            this.buttonExcluirGrupoUsuario.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirGrupoUsuario.TabIndex = 10;
+            this.buttonExcluirGrupoUsuario.Text = "Excluir";
+            this.buttonExcluirGrupoUsuario.UseVisualStyleBackColor = true;
             // 
             // buttonAdicionarPermissao
             // 
-            this.buttonAdicionarPermissao.Location = new System.Drawing.Point(763, 49);
+            this.buttonAdicionarPermissao.Location = new System.Drawing.Point(848, 55);
             this.buttonAdicionarPermissao.Name = "buttonAdicionarPermissao";
             this.buttonAdicionarPermissao.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdicionarPermissao.TabIndex = 7;
+            this.buttonAdicionarPermissao.TabIndex = 11;
             this.buttonAdicionarPermissao.Text = "Adicionar";
             this.buttonAdicionarPermissao.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcluirPermissao
-            // 
-            this.buttonExcluirPermissao.Location = new System.Drawing.Point(844, 49);
-            this.buttonExcluirPermissao.Name = "buttonExcluirPermissao";
-            this.buttonExcluirPermissao.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirPermissao.TabIndex = 7;
-            this.buttonExcluirPermissao.Text = "Excluir";
-            this.buttonExcluirPermissao.UseVisualStyleBackColor = true;
+            this.buttonAdicionarPermissao.Click += new System.EventHandler(this.buttonAdicionarPermissao_Click);
             // 
             // FormBuscarGrupoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 475);
-            this.Controls.Add(this.buttonExcluirPermissao);
+            this.ClientSize = new System.Drawing.Size(1016, 440);
             this.Controls.Add(this.buttonAdicionarPermissao);
-            this.Controls.Add(this.permissoesDataGridView);
-            this.Controls.Add(this.buttonExcluir);
-            this.Controls.Add(this.buttonAdicionar);
-            this.Controls.Add(this.Alterar);
+            this.Controls.Add(this.buttonExcluirGrupoUsuario);
+            this.Controls.Add(this.buttonAdicionarGrupoUsuario);
+            this.Controls.Add(this.buttonExcuirUsuario);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBoxBuscarGrupoUsuario);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.permissoesDataGridView);
             this.Controls.Add(this.grupoUsuariosDataGridView);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormBuscarGrupoUsuario";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -209,15 +199,14 @@
         private System.Windows.Forms.BindingSource grupoUsuariosBindingSource;
         private System.Windows.Forms.DataGridView grupoUsuariosDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.TextBox textBoxBuscarGrupoUsuario;
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button Alterar;
-        private System.Windows.Forms.Button buttonAdicionar;
-        private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.BindingSource permissoesBindingSource;
         private System.Windows.Forms.DataGridView permissoesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonExcuirUsuario;
+        public System.Windows.Forms.Button buttonAdicionarGrupoUsuario;
+        private System.Windows.Forms.Button buttonExcluirGrupoUsuario;
         private System.Windows.Forms.Button buttonAdicionarPermissao;
-        private System.Windows.Forms.Button buttonExcluirPermissao;
     }
 }

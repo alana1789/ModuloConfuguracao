@@ -1,24 +1,42 @@
-﻿using System;
+﻿using BLL;
+using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using BLL;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Models;
 
 namespace WindowsFormsAppPrincipal
 {
-    public partial class FormConsultaGrupoUsuario : Form
+    public partial class FormConsultaPermissao : Form
     {
-        public int Id { get; internal set; }
+        public int Id { get; internal set; } 
 
-        public FormConsultaGrupoUsuario()
+        public FormConsultaPermissao()
         {
             InitializeComponent();
+        }
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+  
+
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void permissoesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -26,11 +44,11 @@ namespace WindowsFormsAppPrincipal
             Close();
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void buttonBuscar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                grupoUsuarioBindingSource.DataSource = new GrupoUsuarioBLL().BuscarPorNomeGrupo(textBoxBuscar.Text);
+                permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPorNomePermissao(textBoxBuscar.Text);
 
             }
             catch (Exception ex)
@@ -44,9 +62,9 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                if (grupoUsuarioBindingSource.Count > 0)
+                if (permissaoBindingSource.Count > 0)
                 {
-                    Id = ((GrupoUsuario)grupoUsuarioBindingSource.Current).Id;
+                    Id = ((Permissao)permissaoBindingSource.Current).Id;
                     Close();
                 }
                 else
@@ -58,15 +76,6 @@ namespace WindowsFormsAppPrincipal
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grupoUsuarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
+

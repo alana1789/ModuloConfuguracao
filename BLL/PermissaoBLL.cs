@@ -37,18 +37,27 @@ namespace BLL
         {
             return new PermissaoDAL().BuscarTodos();
         }
-        public DAL.Permissao BuscarPorDescricao(string _descricao)
+        public object BuscarPorNomePermissao(string text)
         {
-            return new PermissaoDAL().BuscarPorDescricao(_descricao);
+            return new PermissaoDAL().BuscarTodos();
         }
-
-        private void ValidarDados1(DAL.Permissao _descricao)
+       /* private void ValidarDados1(DAL.Permissao _descricao)
         {
             if (_descricao.Senha.Length <= 3)
                 throw new Exception("A senha deve ter mais de 3 caracteres");
             if (_descricao.Nome.Length <= 2)
                 throw new Exception("o nome deve ter mais de 2 caracteres");
+       }
+       */
 
+        public void AdicionarPermissao(int idPermissao1, int idPermissao2)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object BuscarPorPermissao(string text)
+        {
+            return new PermissaoDAL().BuscarTodos();
         }
 
         private class PermissaoDAL

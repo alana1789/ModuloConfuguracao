@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Models
 {
@@ -11,9 +12,9 @@ namespace Models
         public string Senha { get; set; }
         public string Nome { get; set; }
 
-        public void Excluir(int id)
+        public void Excluir(int _id)
         {
-            throw new NotImplementedException();
+            new GrupoUsuario().Excluir(_id);
         }
     }
 }

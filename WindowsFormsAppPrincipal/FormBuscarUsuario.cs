@@ -95,7 +95,7 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                int idGrupoUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+                int idGrupoUsuario = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
                 int idUsuario = ((Usuario)usuarioBindingSource.Current).Id;
                 new UsuarioBLL().RemoverGrupoUsuario(idUsuario, idGrupoUsuario);
                 grupoUsuariosBindingSource.RemoveCurrent();
@@ -108,6 +108,12 @@ namespace WindowsFormsAppPrincipal
         private void FormBuscarUsuario_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormBuscarUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
         }
     }
 }

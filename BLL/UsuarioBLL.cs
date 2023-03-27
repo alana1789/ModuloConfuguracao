@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using DAL;
+using BLL;
 using Models;
 
 namespace BLL
@@ -87,10 +88,17 @@ namespace BLL
             if (!new UsuarioDAL().UsuarioPertenceAoGrupo(_idUsuario, _idUsuario))
                 new UsuarioDAL().AdcionarGrupoUsuario(_idUsuario, _idGrupoUsuario);
         }
-
         public void RemoverGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
         {
             new UsuarioDAL().RemoverGrupoUsuario(_idUsuario, _idGrupoUsuario);
+        }
+        public void Altenticar(string _nomeUsuario, string _Senha)
+        {
+            Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
+            if (_Senha == usuario.Senha && usuario.Ativo)
+                Constantes.IdUsuarioLogado = usuario.Id;
+            else
+                throw new Exception("Usuário ou senha inválidos.");      
         }
     }
 }

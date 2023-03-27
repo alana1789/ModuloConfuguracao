@@ -103,7 +103,7 @@
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 5;
-            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
@@ -113,7 +113,7 @@
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 5;
-            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
@@ -123,7 +123,7 @@
             this.buttonAdicionarUsuario.Name = "buttonAdicionarUsuario";
             this.buttonAdicionarUsuario.Size = new System.Drawing.Size(75, 23);
             this.buttonAdicionarUsuario.TabIndex = 5;
-            this.buttonAdicionarUsuario.Text = "Adicionar";
+            this.buttonAdicionarUsuario.Text = "A&dicionar";
             this.buttonAdicionarUsuario.UseCompatibleTextRendering = true;
             this.buttonAdicionarUsuario.UseVisualStyleBackColor = true;
             this.buttonAdicionarUsuario.Click += new System.EventHandler(this.buttonAdicionarUsuario_Click);
@@ -134,7 +134,7 @@
             this.buttonExcuirUsuario.Name = "buttonExcuirUsuario";
             this.buttonExcuirUsuario.Size = new System.Drawing.Size(75, 23);
             this.buttonExcuirUsuario.TabIndex = 5;
-            this.buttonExcuirUsuario.Text = "Excuir";
+            this.buttonExcuirUsuario.Text = "&Excuir";
             this.buttonExcuirUsuario.UseVisualStyleBackColor = true;
             this.buttonExcuirUsuario.Click += new System.EventHandler(this.buttonExcuirUsuario_Click);
             // 
@@ -144,7 +144,7 @@
             this.buttonExcluirGrupoUsuario.Name = "buttonExcluirGrupoUsuario";
             this.buttonExcluirGrupoUsuario.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluirGrupoUsuario.TabIndex = 5;
-            this.buttonExcluirGrupoUsuario.Text = "Excluir";
+            this.buttonExcluirGrupoUsuario.Text = "E&xcluir";
             this.buttonExcluirGrupoUsuario.UseVisualStyleBackColor = true;
             this.buttonExcluirGrupoUsuario.Click += new System.EventHandler(this.buttonExcluirGrupoUsuario_Click);
             // 
@@ -154,7 +154,7 @@
             this.buttonAdicionarGrupoUsuario.Name = "buttonAdicionarGrupoUsuario";
             this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(75, 23);
             this.buttonAdicionarGrupoUsuario.TabIndex = 5;
-            this.buttonAdicionarGrupoUsuario.Text = "Adicionar";
+            this.buttonAdicionarGrupoUsuario.Text = "Ad&icionar";
             this.buttonAdicionarGrupoUsuario.UseVisualStyleBackColor = true;
             this.buttonAdicionarGrupoUsuario.Click += new System.EventHandler(this.buttonAdicionarGrupoUsuario_Click);
             // 
@@ -256,6 +256,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormBuscarUsuario_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormBuscarUsuario_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
