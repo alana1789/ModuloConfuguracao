@@ -7,6 +7,5 @@ namespace Models
         public int Id { get; set; }
         public string Descricao { get; set; }
         public List<GrupoUsuario> Grupos { get; set; }
-        public string Senha { get; set; }
     }
 }

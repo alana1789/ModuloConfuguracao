@@ -1,97 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using DAL;
+﻿using DAL;
 using Models;
+using System;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class PermissaoBLL
     {
-        public void Inserir(DAL.Permissao _permissao)
+        public void Inserir(Permissao _permissao)
         {
-            if (_permissao.Senha.Length <= 3)
-
-                throw new Exception("A senha deve ter mais de 3 caracteres");
-
-
-            PermissaoDAL permissaoDAL = new PermissaoDAL();
-            permissaoDAL.Inserir(_permissao);
+            new PermissaoDAL().Inserir(_permissao);
         }
-        public void Alterar(DAL.Permissao _permissao)
+        public List<Permissao> BuscarTodos()
         {
-            ValidarDados(_permissao);
-            PermissaoDAL permissaoDAL = new PermissaoDAL();
-            permissaoDAL.Alterar(_permissao);
+            return new PermissaoDAL().BuscarTodos();
         }
-
-        private void ValidarDados(DAL.Permissao permissao)
+        public List<Permissao> BuscarPorDescricao(string _descricao)
         {
-            throw new NotImplementedException();
+            return new PermissaoDAL().BuscarPorDescricao(_descricao);
         }
-
+        public List<Permissao> BuscarPorId(int _id)
+        {
+            return new PermissaoDAL().BuscarPorId(_id);
+        }
+        public void Alterar(Permissao _permissao)
+        {
+            new PermissaoDAL().Alterar(_permissao);
+        }
         public void Excluir(int _id)
         {
             new PermissaoDAL().Excluir(_id);
         }
-        public List<DAL.Permissao> BuscarTodos()
-        {
-            return new PermissaoDAL().BuscarTodos();
-        }
-        public object BuscarPorNomePermissao(string text)
-        {
-            return new PermissaoDAL().BuscarTodos();
-        }
-       /* private void ValidarDados1(DAL.Permissao _descricao)
-        {
-            if (_descricao.Senha.Length <= 3)
-                throw new Exception("A senha deve ter mais de 3 caracteres");
-            if (_descricao.Nome.Length <= 2)
-                throw new Exception("o nome deve ter mais de 2 caracteres");
-       }
-       */
 
-        public void AdicionarPermissao(int idPermissao1, int idPermissao2)
+        public void AdicionarPermissao(int idUsuario, int id)
         {
             throw new NotImplementedException();
         }
 
-        public object BuscarPorPermissao(string text)
+        public object BuscarPorNomePermissao(string text)
         {
-            return new PermissaoDAL().BuscarTodos();
-        }
-
-        private class PermissaoDAL
-        {
-            public PermissaoDAL()
-            {
-            }
-
-            internal void Alterar(DAL.Permissao permissao)
-            {
-                throw new NotImplementedException();
-            }
-
-            internal DAL.Permissao BuscarPorDescricao(string descricao)
-            {
-                throw new NotImplementedException();
-            }
-
-            internal List<DAL.Permissao> BuscarTodos()
-            {
-                throw new NotImplementedException();
-            }
-
-            internal void Excluir(int id)
-            {
-                throw new NotImplementedException();
-            }
-
-            internal void Inserir(DAL.Permissao permissao)
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
     }
 }
-
-

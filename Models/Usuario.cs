@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Models
 {
@@ -13,7 +12,5 @@ namespace Models
         public string CPF { get; set; }
         public bool Ativo { get; set; }
         public List<GrupoUsuario> GrupoUsuarios { get; set; }
-
-        
     }
 }

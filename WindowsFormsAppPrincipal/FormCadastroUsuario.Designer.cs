@@ -119,7 +119,7 @@
             this.nomeTextBox.Location = new System.Drawing.Point(23, 152);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(324, 22);
-            this.nomeTextBox.TabIndex = 2;
+            this.nomeTextBox.TabIndex = 1;
             // 
             // cPFTextBox
             // 
@@ -127,7 +127,7 @@
             this.cPFTextBox.Location = new System.Drawing.Point(353, 152);
             this.cPFTextBox.Name = "cPFTextBox";
             this.cPFTextBox.Size = new System.Drawing.Size(124, 22);
-            this.cPFTextBox.TabIndex = 3;
+            this.cPFTextBox.TabIndex = 2;
             // 
             // emailTextBox
             // 
@@ -135,7 +135,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(483, 152);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(285, 22);
-            this.emailTextBox.TabIndex = 5;
+            this.emailTextBox.TabIndex = 3;
             // 
             // nomeUsuarioTextBox
             // 
@@ -143,7 +143,7 @@
             this.nomeUsuarioTextBox.Location = new System.Drawing.Point(23, 254);
             this.nomeUsuarioTextBox.Name = "nomeUsuarioTextBox";
             this.nomeUsuarioTextBox.Size = new System.Drawing.Size(239, 22);
-            this.nomeUsuarioTextBox.TabIndex = 7;
+            this.nomeUsuarioTextBox.TabIndex = 4;
             // 
             // senhaTextBox
             // 
@@ -151,7 +151,7 @@
             this.senhaTextBox.Location = new System.Drawing.Point(268, 254);
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.Size = new System.Drawing.Size(188, 22);
-            this.senhaTextBox.TabIndex = 9;
+            this.senhaTextBox.TabIndex = 5;
             // 
             // ativoCheckBox
             // 
@@ -160,7 +160,7 @@
             this.ativoCheckBox.Location = new System.Drawing.Point(598, 256);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(59, 20);
-            this.ativoCheckBox.TabIndex = 11;
+            this.ativoCheckBox.TabIndex = 7;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -169,7 +169,7 @@
             this.textBoxConfirmar.Location = new System.Drawing.Point(462, 254);
             this.textBoxConfirmar.Name = "textBoxConfirmar";
             this.textBoxConfirmar.Size = new System.Drawing.Size(114, 22);
-            this.textBoxConfirmar.TabIndex = 12;
+            this.textBoxConfirmar.TabIndex = 6;
             this.textBoxConfirmar.TextChanged += new System.EventHandler(this.textBoxConfirmar_TextChanged);
             // 
             // label1
@@ -188,7 +188,7 @@
             this.buttonSalvar.Location = new System.Drawing.Point(598, 409);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(89, 33);
-            this.buttonSalvar.TabIndex = 25;
+            this.buttonSalvar.TabIndex = 8;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -198,7 +198,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(693, 409);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(89, 33);
-            this.buttonCancelar.TabIndex = 25;
+            this.buttonCancelar.TabIndex = 9;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);

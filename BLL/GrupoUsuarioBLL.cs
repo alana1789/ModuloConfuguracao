@@ -1,69 +1,46 @@
-﻿using DAL;
-using Models;
-using System;
+﻿using Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+using DAL;
 
 namespace BLL
 {
     public class GrupoUsuarioBLL
     {
-        public int Id { get; set; }
-
         public void Inserir(GrupoUsuario _grupoUsuario)
         {
-            throw new Exception("A senha deve ter mais de 3 caracteres");
-
-            GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
-            grupoUsuarioDAL.Inserir(_grupoUsuario);
+            new UsuarioBLL().ValidarPermissao(6);
+            new GrupoUsuarioDAL().Inserir(_grupoUsuario);
         }
-        public void Alterar(GrupoUsuario _grupoUsuario)
-        {
-            ValidarDados(_grupoUsuario);
-            GrupoUsuarioDAL GrupoUsuarioDAL = new GrupoUsuarioDAL();
-            GrupoUsuarioDAL.Alterar(_grupoUsuario);
-        }
-        public void Excluir(int _id)
-        {
-            ValidarPermissao(4);
-            new UsuarioDAL().Excluir(_id);
-        }
-
-        private void ValidarPermissao(int _idPermissao)
-        {
-           //if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissao))
-            //{
-              //  throw new Exception("Você não tem permissão para realizar essa operação. Procure o adiministrador do sistema");
-
-            //}
-        }
-
         public List<GrupoUsuario> BuscarTodos()
         {
             return new GrupoUsuarioDAL().BuscarTodos();
         }
-        public GrupoUsuario BuscarPorId(int _id)
+        public List<GrupoUsuario> BuscarPorNomeGrupo(string _nomeGrupo)
+        {
+            return new GrupoUsuarioDAL().BuscarPorNomeGrupo(_nomeGrupo);
+        }
+        public List<GrupoUsuario> BuscarPorId(int _id)
         {
             return new GrupoUsuarioDAL().BuscarPorId(_id);
         }
-        public GrupoUsuario BuscarPorGrupo(string _nome)
+        public void Alterar(GrupoUsuario _grupoUsuario)
         {
-            return new GrupoUsuarioDAL().BuscarPorDescrissao(_nome);
+            new GrupoUsuarioDAL().Alterar(_grupoUsuario);
         }
-        private void ValidarDados(GrupoUsuario _grupoUsuario)
+        public void Excluir(int _id)
         {
-            if (_grupoUsuario.Senha.Length <= 3)
-                throw new Exception("A senha deve ter mais de 3 caracteres");
-            if (_grupoUsuario.Nome.Length <= 2)
-                throw new Exception("o nome deve ter mais de 2 caracteres");
+            new GrupoUsuarioDAL().Excluir(_id);
+        }
+        public void AdicionarPermissao(int _idGrupo, int _idPermissao)
+        {
+            if (!new GrupoUsuarioDAL().PermissaoVinculada(_idGrupo, _idPermissao))
+                new GrupoUsuarioDAL().AdicionarPermissao(_idGrupo, _idPermissao);
+        }
 
-        }
-        public object BuscarPorNomeGrupo(string text)
+        public void RemoverPermissao(int _idGrupo, int _idPermissao)
         {
-            return new GrupoUsuarioDAL().BuscarTodos();
+            new GrupoUsuarioDAL().RemoverPermissao(_idGrupo, _idPermissao);
         }
     }
 }
-
