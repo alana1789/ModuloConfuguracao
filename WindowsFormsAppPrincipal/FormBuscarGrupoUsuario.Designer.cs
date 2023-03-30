@@ -37,9 +37,9 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.buttonExcuirUsuario = new System.Windows.Forms.Button();
+            this.buttonExcuirGrupoUsuario = new System.Windows.Forms.Button();
             this.buttonAdicionarGrupoUsuario = new System.Windows.Forms.Button();
-            this.buttonExcluirGrupoUsuario = new System.Windows.Forms.Button();
+            this.buttonExcluirPermissao = new System.Windows.Forms.Button();
             this.buttonAdicionarPermissao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).BeginInit();
@@ -127,15 +127,15 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // buttonExcuirUsuario
+            // buttonExcuirGrupoUsuario
             // 
-            this.buttonExcuirUsuario.Location = new System.Drawing.Point(489, 55);
-            this.buttonExcuirUsuario.Name = "buttonExcuirUsuario";
-            this.buttonExcuirUsuario.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcuirUsuario.TabIndex = 7;
-            this.buttonExcuirUsuario.Text = "Excuir";
-            this.buttonExcuirUsuario.UseVisualStyleBackColor = true;
-            this.buttonExcuirUsuario.Click += new System.EventHandler(this.buttonExcuirUsuario_Click);
+            this.buttonExcuirGrupoUsuario.Location = new System.Drawing.Point(489, 55);
+            this.buttonExcuirGrupoUsuario.Name = "buttonExcuirGrupoUsuario";
+            this.buttonExcuirGrupoUsuario.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcuirGrupoUsuario.TabIndex = 7;
+            this.buttonExcuirGrupoUsuario.Text = "Excuir";
+            this.buttonExcuirGrupoUsuario.UseVisualStyleBackColor = true;
+            this.buttonExcuirGrupoUsuario.Click += new System.EventHandler(this.buttonExcuirGrupoUsuario_Click_1);
             // 
             // buttonAdicionarGrupoUsuario
             // 
@@ -148,14 +148,15 @@
             this.buttonAdicionarGrupoUsuario.UseVisualStyleBackColor = true;
             this.buttonAdicionarGrupoUsuario.Click += new System.EventHandler(this.buttonAdicionarGrupoUsuario_Click_1);
             // 
-            // buttonExcluirGrupoUsuario
+            // buttonExcluirPermissao
             // 
-            this.buttonExcluirGrupoUsuario.Location = new System.Drawing.Point(929, 55);
-            this.buttonExcluirGrupoUsuario.Name = "buttonExcluirGrupoUsuario";
-            this.buttonExcluirGrupoUsuario.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirGrupoUsuario.TabIndex = 10;
-            this.buttonExcluirGrupoUsuario.Text = "Excluir";
-            this.buttonExcluirGrupoUsuario.UseVisualStyleBackColor = true;
+            this.buttonExcluirPermissao.Location = new System.Drawing.Point(929, 55);
+            this.buttonExcluirPermissao.Name = "buttonExcluirPermissao";
+            this.buttonExcluirPermissao.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirPermissao.TabIndex = 10;
+            this.buttonExcluirPermissao.Text = "Excluir";
+            this.buttonExcluirPermissao.UseVisualStyleBackColor = true;
+            this.buttonExcluirPermissao.Click += new System.EventHandler(this.buttonExcluirPermissao_Click_1);
             // 
             // buttonAdicionarPermissao
             // 
@@ -173,9 +174,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 440);
             this.Controls.Add(this.buttonAdicionarPermissao);
-            this.Controls.Add(this.buttonExcluirGrupoUsuario);
+            this.Controls.Add(this.buttonExcluirPermissao);
             this.Controls.Add(this.buttonAdicionarGrupoUsuario);
-            this.Controls.Add(this.buttonExcuirUsuario);
+            this.Controls.Add(this.buttonExcuirGrupoUsuario);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.permissoesDataGridView);
@@ -185,6 +186,7 @@
             this.Name = "FormBuscarGrupoUsuario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.FormBuscarGrupoUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesBindingSource)).EndInit();
@@ -204,9 +206,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button buttonExcuirUsuario;
+        private System.Windows.Forms.Button buttonExcuirGrupoUsuario;
         public System.Windows.Forms.Button buttonAdicionarGrupoUsuario;
-        private System.Windows.Forms.Button buttonExcluirGrupoUsuario;
+        private System.Windows.Forms.Button buttonExcluirPermissao;
         private System.Windows.Forms.Button buttonAdicionarPermissao;
     }
 }

@@ -23,7 +23,7 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                grupoUsuariosBindingSource.DataSource = new GrupoUsuarioBLL().BuscarTodos();
+                grupoUsuariosBindingSource.DataSource = new GrupoUsuarioBLL().BuscarPorNomeGrupo(textBox1.Text);
             }
             catch (Exception ex)
             {
@@ -32,48 +32,82 @@ namespace WindowsFormsAppPrincipal
         }
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            if (grupoUsuariosBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Nenhum usuário selecionado.");
-                return;
-            }
+                if (grupoUsuariosBindingSource.Count == 0)
+                    throw new Exception("Não existe grupo a ser excluído");
 
-            int id = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
-            using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario(id))
-            {
-                frm.ShowDialog();
+                using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario(((GrupoUsuario)grupoUsuariosBindingSource.Current).Id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscar_Click(null, null);
             }
-            buttonBuscar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonAdicionarGrupoUsuario_Click_1(object sender, EventArgs e)
         {
-            using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario())
+            using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
                 frm.ShowDialog();
             }
             buttonBuscar_Click(null, null);
-        }
-        private void buttonExcuirUsuario_Click(object sender, EventArgs e)
-        {
-            int id = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
-            new GrupoUsuarioBLL().Excluir(id);
-            grupoUsuariosBindingSource.RemoveCurrent();
-            MessageBox.Show("Registro excluído com sucesso!");
         }
         private void buttonAdicionarPermissao_Click(object sender, EventArgs e)
         {
             try
             {
+                if (grupoUsuariosBindingSource.Count == 0)
+                    throw new Exception("Não existe um grupo selecionado para adicionar uma permissão.");
+
                 using (FormConsultaPermissao frm = new FormConsultaPermissao())
                 {
                     frm.ShowDialog();
-
-                    if (frm.Id != 0)
-                    {
-                        int idUsuario = ((Permissao)permissoesBindingSource.Current).Id;
-                        new PermissaoBLL().AdicionarPermissao(idUsuario, frm.Id);
-                    }
+                    int idGrupo = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
+                    new GrupoUsuarioBLL().AdicionarPermissao(idGrupo, frm.Id);
                 }
+                buttonBuscar_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonExcluirPermissao_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if(permissoesBindingSource.Count == 0)
+                    throw new Exception("Não existe grupo a ser excluído");
+
+                int idGrupo = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
+                int idPermissao = ((Permissao)permissoesBindingSource.Current).Id;
+                new GrupoUsuarioBLL().RemoverPermissao(idGrupo, idPermissao);
+                permissoesBindingSource.RemoveCurrent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void FormBuscarGrupoUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonExcuirGrupoUsuario_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grupoUsuariosBindingSource.Count == 0)
+                    return;
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                new GrupoUsuarioBLL().Excluir(((GrupoUsuario)grupoUsuariosBindingSource.Current).Id);
+                grupoUsuariosBindingSource.RemoveCurrent();
             }
             catch (Exception ex)
             {

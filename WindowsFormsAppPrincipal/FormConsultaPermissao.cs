@@ -22,24 +22,6 @@ namespace WindowsFormsAppPrincipal
             InitializeComponent();
         }
 
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-  
-
-        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void permissoesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -49,7 +31,7 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPorNomePermissao(textBoxBuscar.Text);
+                permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPorDescricao(textBoxBuscar.Text);
 
             }
             catch (Exception ex)
@@ -60,6 +42,25 @@ namespace WindowsFormsAppPrincipal
         }
 
         private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (permissaoBindingSource.Count > 0)
+                {
+                    Id = ((Permissao)permissaoBindingSource.Current).Id;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe registro para ser selecionado");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {

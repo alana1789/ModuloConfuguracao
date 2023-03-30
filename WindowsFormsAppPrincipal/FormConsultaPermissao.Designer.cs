@@ -37,6 +37,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.permissaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Consultar permissão";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -93,7 +93,6 @@
             this.permissoesDataGridView.RowTemplate.Height = 24;
             this.permissoesDataGridView.Size = new System.Drawing.Size(658, 289);
             this.permissoesDataGridView.TabIndex = 11;
-            this.permissoesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.permissoesDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -121,11 +120,22 @@
             this.textBoxBuscar.Size = new System.Drawing.Size(577, 22);
             this.textBoxBuscar.TabIndex = 13;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(505, 476);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Selecionar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormConsultaPermissao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 519);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.permissoesDataGridView);
@@ -153,5 +163,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.Button button1;
     }
 }

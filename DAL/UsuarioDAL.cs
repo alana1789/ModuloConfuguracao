@@ -330,7 +330,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void AdicionarGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -358,7 +357,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public bool UsuarioPertenceAoGrupo(int _idUsuario, int _idGrupoUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -391,7 +389,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void RemoverGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

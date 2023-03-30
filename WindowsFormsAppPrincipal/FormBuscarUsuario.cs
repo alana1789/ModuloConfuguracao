@@ -46,7 +46,7 @@ namespace WindowsFormsAppPrincipal
         }
         private void buttonAdicionarUsuario_Click(object sender, EventArgs e)
         {
-            using (FormCadastroUsuario frm = new FormCadastroUsuario())
+            using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario())
             {
                 frm.ShowDialog();
             }
@@ -109,7 +109,6 @@ namespace WindowsFormsAppPrincipal
         {
 
         }
-
         private void FormBuscarUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
