@@ -50,7 +50,7 @@ namespace WindowsFormsAppPrincipal
         }
         private void buttonAdicionarGrupoUsuario_Click_1(object sender, EventArgs e)
         {
-            using (FormCadastroUsuario frm = new FormCadastroUsuario())
+            using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario())
             {
                 frm.ShowDialog();
             }

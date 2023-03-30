@@ -46,7 +46,7 @@ namespace WindowsFormsAppPrincipal
         }
         private void buttonAdicionarUsuario_Click(object sender, EventArgs e)
         {
-            using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario())
+            using (FormCadastroUsuario frm = new FormCadastroUsuario())
             {
                 frm.ShowDialog();
             }
@@ -83,10 +83,10 @@ namespace WindowsFormsAppPrincipal
                     {
                         int idUsuario = ((Usuario)usuarioBindingSource.Current).Id;
                         new UsuarioBLL().AdicionarGrupoUsuario(idUsuario, frm.Id);
-                    }                                                                    
+                    }
                 }
             }
-            catch (Exception ex)       
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

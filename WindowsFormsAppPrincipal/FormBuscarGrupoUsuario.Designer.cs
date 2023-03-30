@@ -108,7 +108,7 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.dataGridViewTextBoxColumn3.Width = 300;
             // 
             // textBox1
             // 
@@ -172,7 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 440);
+            this.ClientSize = new System.Drawing.Size(1021, 440);
             this.Controls.Add(this.buttonAdicionarPermissao);
             this.Controls.Add(this.buttonExcluirPermissao);
             this.Controls.Add(this.buttonAdicionarGrupoUsuario);
@@ -203,12 +203,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource permissoesBindingSource;
         private System.Windows.Forms.DataGridView permissoesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button buttonExcuirGrupoUsuario;
         public System.Windows.Forms.Button buttonAdicionarGrupoUsuario;
         private System.Windows.Forms.Button buttonExcluirPermissao;
         private System.Windows.Forms.Button buttonAdicionarPermissao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
