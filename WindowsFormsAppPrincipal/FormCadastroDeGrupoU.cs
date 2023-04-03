@@ -12,18 +12,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppPrincipal
 {
-    public partial class FormCadastroGrupoUsuario : Form
+    public partial class FormCadastroDeGrupoU : Form
     {
-        private int id1;
+        private int id;
 
-        public FormCadastroGrupoUsuario()
+        public FormCadastroDeGrupoU()
         {
             InitializeComponent();
         }
 
-        public FormCadastroGrupoUsuario(int id)
+        public FormCadastroDeGrupoU(int id)
         {
-            this.id1 = id;
+            this.id = id;
         }
 
         public int Id { get; private set; }
@@ -32,11 +32,13 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                GrupoUsuarioBLL grupoUsuariosBLL = new GrupoUsuarioBLL();
-                grupoUsuariosBindingSource.EndEdit();
+                GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
+                grupoUsuarioBindingSource.EndEdit();
 
                 if (Id == 0)
-                    grupoUsuariosBLL.Inserir((GrupoUsuario)grupoUsuariosBindingSource.Current);
+                    grupoUsuarioBLL.Inserir((GrupoUsuario)grupoUsuarioBindingSource.Current);
+                else
+                    grupoUsuarioBLL.Alterar((GrupoUsuario)grupoUsuarioBindingSource.Current);
 
                 MessageBox.Show("Registro salvo com sucesso!");
                 Close();
@@ -47,9 +49,24 @@ namespace WindowsFormsAppPrincipal
             }
         }
 
-        private void buttonCancelar_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private void nomeGrupoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+        
+    
+
+
+            
+    
+           
+    
+    
+

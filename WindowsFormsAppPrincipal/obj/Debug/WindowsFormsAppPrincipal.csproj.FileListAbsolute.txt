@@ -31,7 +31,7 @@ C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\o
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastroUsuario.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormConsultaGrupoUsuario.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormBuscarGrupoUsuario.resources
-C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastroGrupoUsuario.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormBuscarPermissao.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormConsultaPermissao.resources
 C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormLogin.resources
+C:\Users\vsistema\Documents\GitHub\ModuloConfuguracao\WindowsFormsAppPrincipal\obj\Debug\WindowsFormsAppPrincipal.FormCadastroDeGrupoU.resources

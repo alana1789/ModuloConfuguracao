@@ -64,11 +64,11 @@
     <Compile Include="FormBuscarUsuario.Designer.cs">
       <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroGrupoUsuario.cs">
+    <Compile Include="FormCadastroDeGrupoU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroGrupoUsuario.Designer.cs">
-      <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    <Compile Include="FormCadastroDeGrupoU.Designer.cs">
+      <DependentUpon>FormCadastroDeGrupoU.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroUsuario.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="FormBuscarUsuario.resx">
       <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroGrupoUsuario.resx">
-      <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastroDeGrupoU.resx">
+      <DependentUpon>FormCadastroDeGrupoU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroUsuario.resx">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>

@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DAL"
+    "\\DAL",
+    "\\WindowsFormsAppPrincipal"
   ],
-  "SelectedNode": "\\DAL\\UsuarioDAL.cs",
+  "SelectedNode": "\\Configuracao.sln",
   "PreviewInSolutionExplorer": false
 }

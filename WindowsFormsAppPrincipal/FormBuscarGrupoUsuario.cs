@@ -37,7 +37,7 @@ namespace WindowsFormsAppPrincipal
                 if (grupoUsuariosBindingSource.Count == 0)
                     throw new Exception("Não existe grupo a ser excluído");
 
-                using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario(((GrupoUsuario)grupoUsuariosBindingSource.Current).Id))
+                using (FormCadastroDeGrupoU frm = new FormCadastroDeGrupoU(((GrupoUsuario)grupoUsuariosBindingSource.Current).Id))
                 {
                     frm.ShowDialog();
                 }
@@ -50,7 +50,7 @@ namespace WindowsFormsAppPrincipal
         }
         private void buttonAdicionarGrupoUsuario_Click_1(object sender, EventArgs e)
         {
-            using (FormCadastroGrupoUsuario frm = new FormCadastroGrupoUsuario())
+            using (FormCadastroDeGrupoU frm = new FormCadastroDeGrupoU())
             {
                 frm.ShowDialog();
             }
@@ -80,7 +80,7 @@ namespace WindowsFormsAppPrincipal
         {
             try
             {
-                if(permissoesBindingSource.Count == 0)
+                if (permissoesBindingSource.Count == 0)
                     throw new Exception("Não existe grupo a ser excluído");
 
                 int idGrupo = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
@@ -114,5 +114,10 @@ namespace WindowsFormsAppPrincipal
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonAlterarG_Click(object sender, EventArgs e)
+        {
+        }
     }
+
 }

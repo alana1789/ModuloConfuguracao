@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.VisualBasic;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -15,7 +16,8 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "INSERT INTO GrupoUsuario(NomeGrupo) VALUES(@NomeGrupo)";
+                cmd.CommandText = @"INSERT INTO GrupoUsuario(NomeGrupo) 
+                                    VALUES(@NomeGrupo)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@NomeGrupo", _grupoUsuario.NomeGrupo);
@@ -27,7 +29,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu erro ao tentar inserir um grupo de usuário no banco de dados.", ex);
+                throw new Exception("Ocorreu erro ao tentar inserir um Grupo no banco de dados.", ex);
             }
             finally
             {
@@ -149,7 +151,8 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE GrupoUsuario SET NomeGrupo = @NomeGrupo WHERE Id = @Id";
+                cmd.CommandText = @"UPDATE GrupoUsuario SET NomeGrupo = @NomeGrupo
+                                    WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@NomeGrupo", _grupoUsuario.NomeGrupo);
@@ -162,7 +165,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu erro ao tentar alterar um grupo de usuário no banco de dados.", ex);
+                throw new Exception("Ocorreu erro ao tentar alterar um usuário no banco de dados.", ex);
             }
             finally
             {

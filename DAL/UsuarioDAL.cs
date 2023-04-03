@@ -30,7 +30,7 @@ namespace DAL
                 cn.Open();
 
                 cmd.ExecuteNonQuery();
-            }
+            }   
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu erro ao tentar inserir um usuário no banco de dados.", ex);
